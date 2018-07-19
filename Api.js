@@ -4,54 +4,10 @@ const app = express();
 
 app.use(express.json());
 
-const entries = [
-  {
-    id: 1, entry: 'ui', title: 'entry', Uid: 1,
-  },
-  {
-    id: 2, entry: '5', title: 'entry', Uid: 2,
-  },
-];
-
 const Users = [
   { id: 1, Username: 'kabir', Password: 'kabir' },
   { id: 2, Username: '5', Password: 'entry' },
 ];
-
-app.get('entries/', (req, res) => {
-  res.send(entries);
-});
-
-app.get('entries/:id', (req, res) => {
-  const arr = entries.find(c => c.id === parseInt(req.params.id, 10));
-  if (!arr) res.status(404).send('The entry is invalid');
-  res.send(arr);
-});
-
-app.post('entries/', (req, res) => {
-  const enter = {
-    id: entries.lenght + 1,
-    name: req.body.name,
-    Title: req.body.title,
-  };
-
-  entries.push(enter);
-  res.send(entries);
-});
-
-app.put('entries/:id', (req, res) => {
-  const arr = entries.find(c => c.id === parseInt(req.params.id, 10));
-  if (!arr) res.status(404).send('The entry is invalid');
-  arr.name = req.body.name;
-  arr.title = req.body.title;
-  res.send(arr);
-});
-
-app.delete('entries/:id', (req, res) => {
-  const arr = entries.find(c => c.id === parseInt(req.params.id, 10));
-  entries.pop(arr);
-  res.send(arr);
-});
 
 app.get('/users', (req, res) => {
   res.send(Users);
