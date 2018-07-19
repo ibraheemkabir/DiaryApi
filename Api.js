@@ -13,7 +13,7 @@ const entries = [
   },
 ];
 
-app.get('entries/', (req, res) => {
+app.get('/entries', (req, res) => {
   res.send(entries);
 });
 
