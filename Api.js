@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/users', routes);
+app.use('/api/v1/users', routes);
 
 
 const port = process.env.Port || 3000;
