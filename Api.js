@@ -1,7 +1,7 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 
-const routes = require('./routes/UserRoute');
+const routes = require('./Routes/UserRoute');
 const routes2 = require('./Routes/EntryRoute');
 
 const app = express();
@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 app.use('/api/v1/users', routes);
-app.use('/api/v1.entries', routes2);
+app.use('/api/v1/entries', routes2);
 
 
 const port = process.env.Port || 3000;
