@@ -10,17 +10,17 @@ const entries = [
   new User('Norman', 'jcoonce', 'none@none.com', 'real'),
 ];
 
-router.get('/entries', (req, res) => {
+router.get('/', (req, res) => {
   res.send(entries);
 });
 
-router.get('/entries/:id', (req, res) => {
+router.get('/:id', (req, res) => {
   const arr = entries.find(c => c.id === parseInt(req.params.id, 10));
   if (!arr) res.status(404).send('The entry is invalid');
   res.send(arr);
 });
 
-router.post('/entries/', (req, res) => {
+router.post('/', (req, res) => {
   const enter = {
     id: entries.lenght + 1,
     name: req.body.name,
@@ -31,7 +31,7 @@ router.post('/entries/', (req, res) => {
   res.send(entries);
 });
 
-router.put('/entries/:id', (req, res) => {
+router.put('/:id', (req, res) => {
   const arr = entries.find(c => c.id === parseInt(req.params.id, 10));
   if (!arr) res.status(404).send('The entry is invalid');
   arr.name = req.body.name;
@@ -39,7 +39,7 @@ router.put('/entries/:id', (req, res) => {
   res.send(arr);
 });
 
-router.delete('/entries/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
   const arr = entries.find(c => c.id === parseInt(req.params.id, 10));
   entries.pop(arr);
   res.send(arr);
