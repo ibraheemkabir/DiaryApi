@@ -10,7 +10,7 @@ const Users = [
   new User('Norman', 'jcoonce', 'none@none.com', 'real'),
 ];
 
-router.get('/users', (req, res) => {
+router.get('/', (req, res) => {
   res.send(Users);
 });
 
