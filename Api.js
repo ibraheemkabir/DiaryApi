@@ -15,5 +15,8 @@ app.use('/api/v1/users', routes);
 app.use('/api/v1/entries', routes2);
 
 
-const port = process.env.P0RT || 3000;
-app.listen(port, () => console.log(`Listening on port ${port}...`));
+app.set('port', (process.env.PORT || 3000));
+
+app.listen(app.get('port'), () => {
+  console.log('Listening on port...');
+});
