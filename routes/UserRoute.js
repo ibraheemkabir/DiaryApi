@@ -31,13 +31,13 @@ router.post('/signup', (req, res) => {
 });
 
 router.post('/signin', (req, res) => {
-  const users = Users.find(Y => Y.Username === req.body.Username);
+  const users = Users.find(Y => Y.username === req.body.username);
   if (!users) res.status(404).send('The user is invalid');
   else if (users.password === req.body.password) {
-    res.send('welldone');
+    res.send('signin succesful');
   } else {
-    res.send('what');
-    //  res.status(401).send({ success: false, msg: 'Authentication failed. Wrong password.' });
+    //res.send('login unsuccessful');
+    res.status(401).send({ success: false, msg: 'Authentication failed. Wrong password.' });
   }
 });
 
