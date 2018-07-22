@@ -2,7 +2,3 @@ sudo: false
 language: node_js
 node_js:
 - "stable"
-after_script:
-- "npm install coveralls && cat ./coverage/lcov.info | coveralls"
-after_success: 'npm run coveralls'
-repo_token: QMWxBkkLU979KvFlpaxjMHhSRpOXmD3l9
