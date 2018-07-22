@@ -2,3 +2,6 @@ sudo: false
 language: node_js
 node_js:
 - "stable"
+env:
+- MY_VAR=EverythignIsAwesome
+- NODE_ENV=TEST
