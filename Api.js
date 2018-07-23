@@ -1,8 +1,6 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 
-const port = 3000;
-
 const routes = require('./routes/UserRoute');
 const routes2 = require('./Routes/EntryRoute');
 
@@ -17,7 +15,7 @@ app.use('/api/v1/users', routes);
 app.use('/api/v1/entries', routes2);
 
 
-app.listen(port);
-console.log('Listening on port {$port}');
+const port = process.env.Port || 3000;
+app.listen(port, () => console.log(`Listening on port ${port}...`));
 
 module.exports = app;
