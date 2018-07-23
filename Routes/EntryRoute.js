@@ -4,10 +4,10 @@ import User from '../models/Entry';
 const router = express.Router();
 
 const entries = [
-  new User('first', 'my trip was cool', '29-3-2000', 21),
-  new User('Bob Coonce', 'bcoonce', 'none@none.com', 'real'),
-  new User('Euri', 'euri', 'none@none.com', 'real'),
-  new User('Norman', 'jcoonce', 'none@none.com', 'real'),
+  new User('first Post', 'my trip was cool', '29-3-2000', 21),
+  new User('Second Post', 'My second post is awesome', 'none@none.com', 2),
+  new User('Third Post', 'My Third post is awesome', 'none@none.com', 4),
+  new User('Fourth Post', 'My fourth post is awesome', 'none@none.com', 1),
 ];
 
 router.get('/', (req, res) => {
@@ -22,9 +22,10 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   const enter = {
-    id: entries.lenght + 1,
-    name: req.body.name,
     Title: req.body.title,
+    Body: req.body.body,
+    Date: req.body.Date,
+    Uid: req.body.Uid,
   };
 
   entries.push(enter);
@@ -32,15 +33,15 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  const arr = entries.find(c => c.id === parseInt(req.params.id, 10));
+  const arr = entries.find(c => c.Uid === parseInt(req.params.id, 10));
   if (!arr) res.status(404).send('The entry is invalid');
-  arr.name = req.body.name;
-  arr.title = req.body.title;
+  arr.Body = req.body.body;
+  arr.Title = req.body.title;
   res.send(arr);
 });
 
 router.delete('/:id', (req, res) => {
-  const arr = entries.find(c => c.id === parseInt(req.params.id, 10));
+  const arr = entries.find(c => c.Uid === parseInt(req.params.id, 10));
   entries.pop(arr);
   res.send(arr);
 });
