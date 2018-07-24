@@ -8,17 +8,21 @@ const should = chai.should();
 chai.use(chaiHttp);
 
 describe('/POST users', () => {
-  it('it should register new users', (done) => {
+  it('it should update an entry', (done) => {
+    const id = 1;
     const users = {
-      email: 'usern2gamil.com',
-      password: 'ibr34',
+      title: 'corrected title',
+      content: 'i am corrected',
     };
     chai.request(app)
-      .post('/api/v1/entry/')
+      .put(`/api/v1/entry/${id}`)
       .send(users)
       .end((err, res) => {
         res.should.have.status(200);
         res.body.should.be.a('object');
+        res.body.should.have.property('title');
+        res.body.should.have.property('id');
+        res.body.title.should.equal('corrected title');
         done();
       });
   });

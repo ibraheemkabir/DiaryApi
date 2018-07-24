@@ -2,7 +2,7 @@
   "name": "DiaryApi",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "Api.js",
   "dependencies": {
     "babel": "^6.23.0",
     "body-parser": "^1.18.3",
@@ -11,6 +11,7 @@
     "express": "^4.16.3",
     "express-jwt": "^5.3.1",
     "jsonwebtoken": "^8.3.0",
+    "node-datetime": "^2.0.6",
     "travis": "^0.1.1"
   },
   "devDependencies": {
@@ -18,8 +19,6 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-latest": "^6.24.1",
     "babel-register": "^6.26.0",
-    "chai": "^4.1.2",
-    "chai-http": "^4.0.0",
     "coveralls": "^3.0.2",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
@@ -28,7 +27,6 @@
     "eslint-plugin-react": "^7.10.0",
     "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
-    "node-datetime": "^2.0.6",
     "nodemon": "^1.18.3"
   },
   "scripts": {
@@ -36,7 +34,7 @@
     "start": "nodemon --exec npm run babel-node -- ./app.js",
     "build": "babel src -d dist",
     "coverage": "node node_modules/.bin/istanbul cover _mocha -- -R spec",
-    "test": "nodemon --exec mocha --compilers js:babel-core/register --exit",
+    "test": "mocha --compilers js:babel-core/register --exit",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
   },
   "keywords": [],
