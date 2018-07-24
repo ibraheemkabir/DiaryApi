@@ -2,7 +2,7 @@
   "name": "DiaryApi",
   "version": "1.0.0",
   "description": "",
-  "main": "Api.js",
+  "main": "app.js",
   "dependencies": {
     "babel": "^6.23.0",
     "body-parser": "^1.18.3",
