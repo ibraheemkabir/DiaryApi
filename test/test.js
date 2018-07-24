@@ -7,11 +7,11 @@ const expect = chai.expect();
 const should = chai.should();
 chai.use(chaiHttp);
 
-describe('/POST users', () => {
-  it('it should register new users', (done) => {
+describe('/POST entry', () => {
+  it('it should add new posts', (done) => {
     const users = {
       title: 'J.R.R. Tolkien',
-      content: 'i saw game of thrones',
+      content: 'i saw game of thrones today',
     };
     chai.request(app)
       .post('/api/v1/entry')
