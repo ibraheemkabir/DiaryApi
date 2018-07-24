@@ -1,0 +1,100 @@
+[33m6526d34[m[33m ([m[1;36mHEAD -> [m[1;32mft-implement-updateentry-endpoint[m[33m)[m HEAD@{0}: checkout: moving from ft-implement-getspecificentries-endpoint to ft-implement-updateentry-endpoint
+[33mb49162d[m[33m ([m[1;32mft-implement-getspecificentries-endpoint[m[33m)[m HEAD@{1}: checkout: moving from ft-implement-updateentry-endpoint to ft-implement-getspecificentries-endpoint
+[33m6526d34[m[33m ([m[1;36mHEAD -> [m[1;32mft-implement-updateentry-endpoint[m[33m)[m HEAD@{2}: commit: initial
+[33mb5534f5[m[33m ([m[1;31mheroku/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mft-implement-getusser-endpoint[m[33m, [m[1;32mft-implement-getuser-endpoint[m[33m)[m HEAD@{3}: checkout: moving from ft-implement-deleteentry-endpoint to ft-implement-updateentry-endpoint
+[33mbac11a3[m HEAD@{4}: commit: initial
+[33m99f77fd[m HEAD@{5}: checkout: moving from ft-implement-getspecificentries-endpoint to ft-implement-deleteentry-endpoint
+[33mb49162d[m[33m ([m[1;32mft-implement-getspecificentries-endpoint[m[33m)[m HEAD@{6}: checkout: moving from ft-implement-deleteentry-endpoint to ft-implement-getspecificentries-endpoint
+[33m99f77fd[m HEAD@{7}: commit: initial
+[33m896e73b[m HEAD@{8}: checkout: moving from ft-implement-getspecificentries-endpoint to ft-implement-deleteentry-endpoint
+[33mb49162d[m[33m ([m[1;32mft-implement-getspecificentries-endpoint[m[33m)[m HEAD@{9}: checkout: moving from ft-implement-deleteentry-endpoint to ft-implement-getspecificentries-endpoint
+[33m896e73b[m HEAD@{10}: commit: initial commit
+[33mb5534f5[m[33m ([m[1;31mheroku/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mft-implement-getusser-endpoint[m[33m, [m[1;32mft-implement-getuser-endpoint[m[33m)[m HEAD@{11}: checkout: moving from ft-implement-getspecificentries-endpoint to ft-implement-deleteentry-endpoint
+[33mb49162d[m[33m ([m[1;32mft-implement-getspecificentries-endpoint[m[33m)[m HEAD@{12}: commit: routing
+[33mb5534f5[m[33m ([m[1;31mheroku/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mft-implement-getusser-endpoint[m[33m, [m[1;32mft-implement-getuser-endpoint[m[33m)[m HEAD@{13}: checkout: moving from ft-implement-deleteentry-endpoint to ft-implement-getspecificentries-endpoint
+[33mb5534f5[m[33m ([m[1;31mheroku/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mft-implement-getusser-endpoint[m[33m, [m[1;32mft-implement-getuser-endpoint[m[33m)[m HEAD@{14}: checkout: moving from ft-implement-getallentries-endpoint to ft-implement-deleteentry-endpoint
+[33m9bb8ff1[m[33m ([m[1;32mft-implement-getallentries-endpoint[m[33m)[m HEAD@{15}: commit: initial commit
+[33mb5534f5[m[33m ([m[1;31mheroku/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mft-implement-getusser-endpoint[m[33m, [m[1;32mft-implement-getuser-endpoint[m[33m)[m HEAD@{16}: checkout: moving from ft-implement-getallentries-endpoint to ft-implement-getallentries-endpoint
+[33mb5534f5[m[33m ([m[1;31mheroku/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mft-implement-getusser-endpoint[m[33m, [m[1;32mft-implement-getuser-endpoint[m[33m)[m HEAD@{17}: checkout: moving from ft-implement-addentry-endpoint to ft-implement-getallentries-endpoint
+[33ma3d1496[m[33m ([m[1;32mft-implement-addentry-endpoint[m[33m)[m HEAD@{18}: commit: initial commit add entry endpoint
+[33mb5534f5[m[33m ([m[1;31mheroku/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mft-implement-getusser-endpoint[m[33m, [m[1;32mft-implement-getuser-endpoint[m[33m)[m HEAD@{19}: checkout: moving from entries to ft-implement-addentry-endpoint
+[33m21123e0[m[33m ([m[1;31morigin/entries[m[33m)[m HEAD@{20}: checkout: moving from rm to entries
+[33m2c4c24f[m HEAD@{21}: commit: checking
+[33m21123e0[m[33m ([m[1;31morigin/entries[m[33m)[m HEAD@{22}: checkout: moving from entries to rm
+[33m21123e0[m[33m ([m[1;31morigin/entries[m[33m)[m HEAD@{23}: checkout: moving from dev to entries
+[33m0009543[m[33m ([m[1;32mdev[m[33m)[m HEAD@{24}: commit: api modified
+[33mb5534f5[m[33m ([m[1;31mheroku/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mft-implement-getusser-endpoint[m[33m, [m[1;32mft-implement-getuser-endpoint[m[33m)[m HEAD@{25}: checkout: moving from ft-implement-deleteentry-endpoint to dev
+[33mb5534f5[m[33m ([m[1;31mheroku/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mft-implement-getusser-endpoint[m[33m, [m[1;32mft-implement-getuser-endpoint[m[33m)[m HEAD@{26}: checkout: moving from ft-implement-addentry-endpoint to ft-implement-deleteentry-endpoint
+[33mb5534f5[m[33m ([m[1;31mheroku/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mft-implement-getusser-endpoint[m[33m, [m[1;32mft-implement-getuser-endpoint[m[33m)[m HEAD@{27}: checkout: moving from master to ft-implement-addentry-endpoint
+[33mb5534f5[m[33m ([m[1;31mheroku/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mft-implement-getusser-endpoint[m[33m, [m[1;32mft-implement-getuser-endpoint[m[33m)[m HEAD@{28}: checkout: moving from dev to master
+[33mb5534f5[m[33m ([m[1;31mheroku/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mft-implement-getusser-endpoint[m[33m, [m[1;32mft-implement-getuser-endpoint[m[33m)[m HEAD@{29}: checkout: moving from master to dev
+[33mb5534f5[m[33m ([m[1;31mheroku/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mft-implement-getusser-endpoint[m[33m, [m[1;32mft-implement-getuser-endpoint[m[33m)[m HEAD@{30}: checkout: moving from ft-implement-getusser-endpoint to master
+[33mb5534f5[m[33m ([m[1;31mheroku/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mft-implement-getusser-endpoint[m[33m, [m[1;32mft-implement-getuser-endpoint[m[33m)[m HEAD@{31}: Branch: renamed refs/heads/ft-implement-getusser-endpoint to refs/heads/ft-implement-getusser-endpoint
+[33mb5534f5[m[33m ([m[1;31mheroku/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mft-implement-getusser-endpoint[m[33m, [m[1;32mft-implement-getuser-endpoint[m[33m)[m HEAD@{33}: Branch: renamed refs/heads/dev to refs/heads/ft-implement-getusser-endpoint
+[33mb5534f5[m[33m ([m[1;31mheroku/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mft-implement-getusser-endpoint[m[33m, [m[1;32mft-implement-getuser-endpoint[m[33m)[m HEAD@{35}: checkout: moving from master to dev
+[33mb5534f5[m[33m ([m[1;31mheroku/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mft-implement-getusser-endpoint[m[33m, [m[1;32mft-implement-getuser-endpoint[m[33m)[m HEAD@{36}: commit: local
+[33mb29c6db[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{37}: commit: code clean up
+[33mabaaf31[m HEAD@{38}: commit: code clean up
+[33m4630171[m HEAD@{39}: commit: resolved tests
+[33m12ca120[m HEAD@{40}: commit: resolved test
+[33m46e492e[m HEAD@{41}: commit: resolved tests
+[33m52e8dae[m HEAD@{42}: commit: resolved test
+[33mbdf233f[m HEAD@{43}: commit: resolved test
+[33m50c683c[m HEAD@{44}: commit: resolved tests
+[33m6f0ad59[m HEAD@{45}: commit: resolved test
+[33medca775[m HEAD@{46}: commit: routes bug fixed
+[33m735dfcb[m HEAD@{47}: commit: routes bug fixed
+[33m2afa7af[m HEAD@{48}: commit: routes bug fixed
+[33m4c89f87[m HEAD@{49}: commit: env settings
+[33m64c405a[m HEAD@{50}: commit: added procfile
+[33mcd3f3d0[m HEAD@{51}: commit: api.js bug fixed
+[33m460d34d[m HEAD@{52}: checkout: moving from userauth to master
+[33mdeeca32[m HEAD@{53}: checkout: moving from master to userauth
+[33m460d34d[m HEAD@{54}: commit: babel fix
+[33m1f17269[m HEAD@{55}: checkout: moving from userauth to master
+[33mdeeca32[m HEAD@{56}: checkout: moving from master to userauth
+[33m1f17269[m HEAD@{57}: pull: Fast-forward
+[33me38ed13[m HEAD@{58}: checkout: moving from entries to master
+[33m21123e0[m[33m ([m[1;31morigin/entries[m[33m)[m HEAD@{59}: checkout: moving from entries to entries
+[33m21123e0[m[33m ([m[1;31morigin/entries[m[33m)[m HEAD@{60}: checkout: moving from userauth to entries
+[33mdeeca32[m HEAD@{61}: checkout: moving from entries to userauth
+[33m21123e0[m[33m ([m[1;31morigin/entries[m[33m)[m HEAD@{62}: checkout: moving from userauth to entries
+[33mdeeca32[m HEAD@{63}: checkout: moving from userauth to userauth
+[33mdeeca32[m HEAD@{64}: commit: conflict resolution:
+[33mb422ef6[m HEAD@{65}: checkout: moving from entries to userauth
+[33m21123e0[m[33m ([m[1;31morigin/entries[m[33m)[m HEAD@{66}: commit: api cleanup
+[33m7485e28[m HEAD@{67}: checkout: moving from userauth to entries
+[33mb422ef6[m HEAD@{68}: commit: api cleanup
+[33m2e6185c[m HEAD@{69}: checkout: moving from entries to userauth
+[33m7485e28[m HEAD@{70}: checkout: moving from userauth to entries
+[33m2e6185c[m HEAD@{71}: commit: conflict resolution:
+[33m5e4064f[m HEAD@{72}: checkout: moving from master to userauth
+[33me38ed13[m HEAD@{73}: checkout: moving from entries to master
+[33m7485e28[m HEAD@{74}: commit: coverall integration:
+[33maa65a3b[m HEAD@{75}: commit: coverall integration:
+[33m78f6739[m HEAD@{76}: commit: set up coverage
+[33m0fb4578[m HEAD@{77}: commit: setup failed tests
+[33m9f43213[m HEAD@{78}: checkout: moving from userauth to entries
+[33m5e4064f[m HEAD@{79}: commit: setup failed tests
+[33mbd335fd[m HEAD@{80}: checkout: moving from entries to userauth
+[33m9f43213[m HEAD@{81}: commit: finished babel config
+[33mc62d297[m HEAD@{82}: checkout: moving from userauth to entries
+[33mbd335fd[m HEAD@{83}: checkout: moving from entries to userauth
+[33mc62d297[m HEAD@{84}: commit: 'config'
+[33mc64c98e[m HEAD@{85}: checkout: moving from userauth to entries
+[33mbd335fd[m HEAD@{86}: commit: babel configuration done@
+[33m66cece7[m HEAD@{87}: checkout: moving from entries to userauth
+[33mc64c98e[m HEAD@{88}: commit: post bug fixed
+[33m9b88bca[m HEAD@{89}: checkout: moving from master to entries
+[33me38ed13[m HEAD@{90}: checkout: moving from userauth to master
+[33m66cece7[m HEAD@{91}: commit: fixed password bug
+[33m5562453[m HEAD@{92}: checkout: moving from entries to userauth
+[33m9b88bca[m HEAD@{93}: commit: fixed put endpoint
+[33m1988260[m HEAD@{94}: checkout: moving from master to entries
+[33me38ed13[m HEAD@{95}: checkout: moving from userauth to master
+[33m5562453[m HEAD@{96}: commit: initial commit
+[33me38ed13[m HEAD@{97}: checkout: moving from entries to userauth
+[33m1988260[m HEAD@{98}: checkout: moving from entries to entries
+[33m1988260[m HEAD@{99}: commit: initial commit
+[33me38ed13[m HEAD@{100}: checkout: moving from master to entries
+[33me38ed13[m HEAD@{101}: clone: from https://github.com/ibraheemkabir/DiaryApi.git

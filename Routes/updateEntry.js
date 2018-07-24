@@ -5,12 +5,12 @@ const datetime = require('node-datetime');
 
 const router = express.Router();
 
-let id = 1;
+const id = 1;
 const dt = datetime.create();
 const formatted = dt.format('m/d/Y');
 
 const entries = [
-  new User(id, 'Dear diary today is my fist post', 'my first post', '29-34-2016'),
+  new User(id, 'Dear diary today is my fist post', 'my first post', formatted),
 ];
 
 router.put('entries/:id', (req, res) => {
