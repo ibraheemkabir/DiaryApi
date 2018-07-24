@@ -4,7 +4,7 @@ node_js:
 addons:
     code_climate:
         repo_token: 8fbb155ce9843c43c4ed6824d86b2eb765574766d657d0a3ecf5126770b2a2e7
-script: nyc node_modules/mocha/bin/mocha -- --compilers js:babel-core/register test/* --exit
+script: nyc mocha --compilers js:babel-core/register --exit
 before_script:
   - npm install codeclimate-test-reporter nyc -g
 after_script:
