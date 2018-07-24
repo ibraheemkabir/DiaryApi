@@ -55,3 +55,44 @@ describe('/POST users', () => {
       });
   });
 });
+
+describe('/GET entries', () => {
+  it('it should GET all the users', (done) => {
+    chai.request(app)
+      .get('/api/v1/entries')
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a('array');
+        done();
+      });
+  });
+});
+
+describe('/POST entries', () => {
+  it('it should enter a new post', (done) => {
+    const entry = {
+      T: 'usern2gamil.com',
+      password: 'ibr34',
+    };
+    chai.request(app)
+      .post('/api/v1/entries/post')
+      .send(entry)
+      .end((err, res) => {
+        res.should.have.status(202);
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+});
+
+describe('/DEL entries', () => {
+  it('it should delete user entry', (done) => {
+    chai.request(app)
+      .post('/api/v1/entries/delete/21')
+      .end((err, res) => {
+        res.should.have.status(202);
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+});
