@@ -10,7 +10,7 @@ chai.use(chaiHttp);
 
 // Test the /GET route
 describe('/GET entries', () => {
-  it('it should GET all the entries', (done) => {
+  it('it should a particular entry', (done) => {
     const id = 1;
     chai.request(app)
       .get(`/api/v1/entry/${id}`)
