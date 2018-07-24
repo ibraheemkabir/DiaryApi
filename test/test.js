@@ -1,7 +1,7 @@
 process.env.NODE_ENV = 'test';
 const chaiHttp = require('chai-http');
 const chai = require('chai');
-const app = require('../server');
+const app = require('../app');
 
 const expect = chai.expect();
 const should = chai.should();
@@ -18,7 +18,7 @@ describe('/POST users', () => {
       .send(users)
       .end((err, res) => {
         res.should.have.status(200);
-        res.body.should.be.a('object');
+        res.body.should.be.a('array');
         done();
       });
   });
