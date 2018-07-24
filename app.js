@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 
-const routes = require('./routes/getidRoute');
+const routes = require('./routes/deleteEntry');
 
 const app = express();
 
