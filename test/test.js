@@ -7,49 +7,17 @@ const expect = chai.expect();
 const should = chai.should();
 chai.use(chaiHttp);
 
-
-// Test the /GET route
-describe('/GET users', () => {
-  it('it should GET all the users', (done) => {
-    chai.request(app)
-      .get('/api/v1/users')
-      .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a('array');
-        done();
-      });
-  });
-});
-
 describe('/POST users', () => {
   it('it should register new users', (done) => {
     const users = {
-      name: 'J.R.R. Tolkien',
-      email: 'usern2gamil.com',
-      password: 'ibr34',
+      title: 'J.R.R. Tolkien',
+      content: 'i saw game of thrones',
     };
     chai.request(app)
-      .post('/api/v1/users/signup')
+      .post('/api/v1/entry')
       .send(users)
       .end((err, res) => {
         res.should.have.status(200);
-        res.body.should.be.a('object');
-        done();
-      });
-  });
-});
-
-describe('/POST users', () => {
-  it('it should register new users', (done) => {
-    const users = {
-      email: 'usern2gamil.com',
-      password: 'ibr34',
-    };
-    chai.request(app)
-      .post('/api/v1/users/sigin')
-      .send(users)
-      .end((err, res) => {
-        res.should.have.status(404);
         res.body.should.be.a('object');
         done();
       });
