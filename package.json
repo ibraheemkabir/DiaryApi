@@ -10,6 +10,7 @@
     "chai-http": "^4.0.0",
     "express": "^4.16.3",
     "express-jwt": "^5.3.1",
+    "isparta": "^4.1.0",
     "jsonwebtoken": "^8.3.0",
     "node-datetime": "^2.0.6",
     "travis": "^0.1.1"
@@ -33,8 +34,8 @@
     "babel-node": "babel-node --presets=es2015",
     "start": "nodemon --exec npm run babel-node -- ./app.js",
     "build": "babel src -d dist",
-    "coverage": "node node_modules/.bin/istanbul cover _mocha -- -R spec",
-    "test": "mocha --compilers js:babel-core/register --exit",
+    "coverage": "istanbul cover --include-all-sources ./test/test.js && istanbul check-coverage",
+    "test": "istanbul cover --report mocha --compilers js:babel-core/register --exit",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
   },
   "keywords": [],
