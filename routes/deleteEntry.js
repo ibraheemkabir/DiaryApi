@@ -10,14 +10,17 @@ const formatted = dt.format('m/d/Y');
 
 const entries = [
   new User(id, 'my trip was cool', '29-3-2000', formatted),
-  new User(id, 'My second post is awesome', 'none@none.com', formatted),
+  new User(2, 'My second post is awesome', 'none@none.com', formatted),
 ];
 
+router.get('/', (req, res) => {
+  res.send(entries);
+});
 
 router.delete('/:id', (req, res) => {
-  const arr = entries.find(c => c.Uid === parseInt(req.params.id, 10));
+  const arr = entries.find(c => c.id === parseInt(req.params.id, 10));
   entries.pop(arr);
-  res.send(arr);
+  res.send(entries);
 });
 
 

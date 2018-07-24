@@ -1,5 +1,6 @@
 export default class Entry {
-  constructor(Title, Body, Date, Uid) {
+  constructor(id, Title, Body, Date, Uid) {
+    this.id = id;
     this.Title = Title;
     this.Body = Body;
     this.Date = Date;
