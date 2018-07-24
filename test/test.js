@@ -9,7 +9,7 @@ chai.use(chaiHttp);
 
 
 // Test the /GET route
-describe('/GET users', () => {
+describe('/GET entries', () => {
   it('it should GET all the entries', (done) => {
     chai.request(app)
       .get('/api/v1/entries')
