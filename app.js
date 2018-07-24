@@ -2,7 +2,6 @@ import express from 'express';
 import bodyParser from 'body-parser';
 
 const routes = require('./routes/deleteEntry');
-const datetime = require('node-datetime');
 
 const app = express();
 
