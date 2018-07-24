@@ -4,7 +4,7 @@ node_js:
 addons:
     code_climate:
         repo_token: 8fbb155ce9843c43c4ed6824d86b2eb765574766d657d0a3ecf5126770b2a2e7
-script: istanbul cover node_modules/mocha/bin/_mocha -- -R spec
+script: istanbul cover mocha --compilers js:babel-core/register --exit
 before_script:
   - npm install codeclimate-test-reporter istanbul -g
 after_script:
