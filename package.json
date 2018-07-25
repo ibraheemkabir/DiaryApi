@@ -36,9 +36,9 @@
     "babel-node": "babel-node --presets=es2015",
     "start": "nodemon --exec npm run babel-node -- ./app.js",
     "build": "babel src -d dist",
-    "coverage": "nyc node_modules/mocha/bin/_mocha --compilers js:babel-core/register test/test.js --exit",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "test": "nyc mocha --compilers js:babel-core/register --exit",
-    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "keywords": [],
   "author": "",
