@@ -1,5 +1,5 @@
 import express from 'express';
-import User from '../models/entrymodel';
+import entries from '../helpers/array';
 
 const datetime = require('node-datetime');
 
@@ -9,9 +9,6 @@ let id = 1;
 const dt = datetime.create();
 const formatted = dt.format('m/d/Y');
 
-const entries = [
-  new User(id, 'Dear diary today is my fist post', 'my first post', '29-34-2016'),
-];
 
 router.post('/', (req, res) => {
   const enter = {

@@ -27,14 +27,14 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.10.0",
     "istanbul": "^0.4.5",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2"
   },
   "scripts": {
     "start": "./node_modules/.bin/babel-node app.js",
     "build": "babel src -d dist",
-    "coverage": "node node_modules/.bin/istanbul cover _mocha -- -R spec",
-    "test": "mocha --compilers js:babel-core/register server/test/ --exit",
-    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "test": " nyc mocha --compilers js:babel-core/register server/test/ --exit"
   },
   "keywords": [],
   "author": "",
