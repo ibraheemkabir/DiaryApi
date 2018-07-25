@@ -19,7 +19,9 @@ app.use('/api/v1/entry/', all);
 app.use('/api/v1/entry/', getentry);
 app.use('/api/v1/entry/', Update);
 
-const port = process.env.Port || 3000;
-app.listen(port, () => console.log(`Listening on port ${port}...`));
+app.set('port', (process.env.PORT || 3000));
+app.listen(app.get('port'), () => {
+  console.log('Listening on port...');
+});
 
 module.exports = app;
