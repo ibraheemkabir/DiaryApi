@@ -1,3 +1,4 @@
+## MyDiary
 MyDiary is an application that allows a user to owna virtual diaary where they can post daily life experiences and also get daily notifications.
 
 [![Build Status](https://travis-ci.org/ibraheemkabir/DiaryApi.svg?branch=master)](https://travis-ci.org/ibraheemkabir/DiaryApi)
