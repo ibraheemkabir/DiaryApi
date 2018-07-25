@@ -30,8 +30,9 @@
     "mocha": "^5.2.0"
   },
   "scripts": {
+    "star": "babel-node -- ./app.js",
     "babel-node": "babel-node --presets=es2015",
-    "start": "nodemon --exec npm run babel-node -- ./app.js",
+    "start": "npm run star",
     "build": "babel src -d dist",
     "coverage": "node node_modules/.bin/istanbul cover _mocha -- -R spec",
     "test": "mocha --compilers js:babel-core/register server/test/ --exit",
