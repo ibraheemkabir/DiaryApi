@@ -7,11 +7,11 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const add = require('./routes/addRoute');
-const del = require('./routes/deleteEntry');
-const all = require('./routes/getallRoute');
-const getentry = require('./routes/getidRoute');
-const Update = require('./routes/updateEntry');
+const add = require('./server/routes/addRoute');
+const del = require('./server/routes/deleteEntry');
+const all = require('./server/routes/getallRoute');
+const getentry = require('./server/routes/getidRoute');
+const Update = require('./server/routes/updateEntry');
 
 app.use('/api/v1/entry/', add);
 app.use('/api/v1/entry/', del);

@@ -34,7 +34,7 @@
     "start": "nodemon --exec npm run babel-node -- ./app.js",
     "build": "babel src -d dist",
     "coverage": "node node_modules/.bin/istanbul cover _mocha -- -R spec",
-    "test": "mocha --compilers js:babel-core/register --exit",
+    "test": "mocha --compilers js:babel-core/register server/test/ --exit",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
   },
   "keywords": [],
