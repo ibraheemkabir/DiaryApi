@@ -4,7 +4,6 @@
   "description": "",
   "main": "Api.js",
   "dependencies": {
-    "babel": "^6.23.0",
     "body-parser": "^1.18.3",
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
@@ -16,6 +15,7 @@
     "travis": "^0.1.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
