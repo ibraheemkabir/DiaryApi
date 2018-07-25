@@ -8,4 +8,4 @@ script: nyc --reporter=lcov --reporter=text-lcov mocha --compilers js:babel-core
 before_script:
   - npm install codeclimate-test-reporter nyc -g
 after_script:
-  - codeclimate-test-reporter < ./coverage/lcov.info
+  - npm run coverage
