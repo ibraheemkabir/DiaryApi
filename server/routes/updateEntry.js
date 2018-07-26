@@ -1,17 +1,7 @@
 import express from 'express';
-import User from '../models/entrymodel';
-
-const datetime = require('node-datetime');
+import entries from '../helpers/array';
 
 const router = express.Router();
-
-const id = 1;
-const dt = datetime.create();
-const formatted = dt.format('m/d/Y');
-
-const entries = [
-  new User(id, 'Dear diary today is my fist post', 'my first post', formatted),
-];
 
 router.put('/:id', (req, res) => {
   const arr = entries.find(c => c.id === parseInt(req.params.id, 10));

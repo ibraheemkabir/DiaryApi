@@ -4,3 +4,7 @@ node_js:
 - "stable"
 addons:
   chrome: stable
+script:
+- npm run test
+- npm run coverage
+after_success: npm run coverage
