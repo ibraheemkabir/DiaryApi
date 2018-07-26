@@ -2,7 +2,9 @@
 [![Coverage Status](https://coveralls.io/repos/github/ibraheemkabir/DiaryApi/badge.svg?branch=ft-getspecificentry-%23159179157)](https://coveralls.io/github/ibraheemkabir/DiaryApi?branch=ft-getspecificentry-%23159179157) 
 [![Maintainability](https://api.codeclimate.com/v1/badges/26e3517bc3052f064239/maintainability)](https://codeclimate.com/github/ibraheemkabir/DiaryApi/maintainability)
 
+<<<<<<< HEAD
 # MyDiary
+
 MyDiary is an application that allows a user to owna virtual diaary where they can post daily life experiences and also get daily notifications.
 
 **View UI template:** [Click]()
