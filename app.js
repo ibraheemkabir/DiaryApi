@@ -1,17 +1,19 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-
-const routes = require('./routes/getallRoute');
+const bodyParser = require('body-parser');
+const express = require('express');
 
 const app = express();
 
-app.use(express.json());
-app.use(bodyParser.json());
+
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-app.use('/api/v1/entry', routes);
+const all = require('./server/routes/getallRoute');
 
-const port = process.env.Port || 3000;
-app.listen(port, () => console.log(`Listening on port ${port}...`));
+app.use('/api/v1/entry/', all);
+
+app.set('port', (process.env.PORT || 3000));
+app.listen(app.get('port'), () => {
+  console.log('Listening on port...');
+});
 
 module.exports = app;

@@ -1,12 +1,14 @@
+import app from '../../app';
+
 process.env.NODE_ENV = 'test';
+
+
 const chaiHttp = require('chai-http');
 const chai = require('chai');
-const app = require('../app');
 
 const expect = chai.expect();
 const should = chai.should();
 chai.use(chaiHttp);
-
 
 // Test the /GET route
 describe('/GET entries', () => {
