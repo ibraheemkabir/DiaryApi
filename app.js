@@ -7,11 +7,13 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const routes = require('./routes/addRoute');
+const add = require('./server/routes/addRoute');
 
-app.use('/api/v1/entry/', routes);
+app.use('/api/v1/entry/', add);
 
-const port = process.env.Port || 3000;
-app.listen(port, () => console.log(`Listening on port ${port}...`));
+app.set('port', (process.env.PORT || 3000));
+app.listen(app.get('port'), () => {
+  console.log('Listening on port...');
+});
 
 module.exports = app;
