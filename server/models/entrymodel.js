@@ -1,5 +1,5 @@
 
-export default class User {
+export default class Entries {
   constructor(id, title, content, date) {
     this.id = id;
     this.title = title;

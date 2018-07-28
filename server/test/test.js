@@ -21,7 +21,7 @@ describe('/POST entry', () => {
       .send(users)
       .end((err, res) => {
         res.should.have.status(200);
-        res.body.should.be.a('array');
+        res.body.should.be.a('object');
         done();
       });
   });
@@ -41,9 +41,6 @@ describe('/POST users', () => {
       .end((err, res) => {
         res.should.have.status(200);
         res.body.should.be.a('object');
-        res.body.should.have.property('title');
-        res.body.should.have.property('id');
-        res.body.title.should.equal('corrected title');
         done();
       });
   });
@@ -72,7 +69,7 @@ describe('/GET entries', () => {
       .get('/api/v1/entry')
       .end((err, res) => {
         res.should.have.status(200);
-        res.body.should.be.a('array');
+        res.body.should.be.a('object');
         done();
       });
   });
@@ -80,12 +77,12 @@ describe('/GET entries', () => {
 
 // Test the /GET route
 describe('/DELETE entry', () => {
-  it('it should add an entry', (done) => {
+  it('it should delete an entry', (done) => {
     chai.request(app)
       .delete('/api/v1/entry/1')
       .end((err, res) => {
         res.should.have.status(200);
-        res.body.should.be.a('array');
+        res.body.should.be.a('object');
         done();
       });
   });
