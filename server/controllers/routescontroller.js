@@ -49,12 +49,13 @@ class Entriescontroller {
     });
   }
 
-
   allentries(req, res) {
+    const { userId } = req;
     res.status(200).send({
       success: 'true',
       message: 'entries retrieved successfully',
       entries: entry,
+      id: userId,
     });
   }
 

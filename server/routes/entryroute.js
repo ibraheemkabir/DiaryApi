@@ -1,14 +1,18 @@
 import express from 'express';
 
-import entrycontroller from '../controllers/routescontroller';
+import entries from '../models/entries';
+
+import entrycontroller2 from '../controllers/routescontrollerv2';
+
+import authorize from '../helpers/authorize';
 
 const router = express.Router();
 
-router.get('/', entrycontroller.allentries);
-router.get('/:id', entrycontroller.getentry);
-router.post('/', entrycontroller.addentry);
-router.put('/:id', entrycontroller.updateentry);
-router.delete('/:id', entrycontroller.deleteentry);
+router.get('/', authorize, entrycontroller2.allentries, entries.allentries);
+router.get('/:id', authorize, entrycontroller2.getentry, entries.getentry);
+router.post('/', authorize, entrycontroller2.addentry, entries.addentry);
+router.put('/:id', authorize, entrycontroller2.updateentry, entries.updateentry);
+router.delete('/:id', authorize, entrycontroller2.deleteentry, entries.deleteentry);
 
 export default router;
 module.exports = router;
