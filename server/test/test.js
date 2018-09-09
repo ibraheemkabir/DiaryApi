@@ -29,7 +29,7 @@ describe('/POST entry', () => {
   let token;
 
   before(function (done) {
-    this.timeout(10000);
+    this.timeout(9000);
     setTimeout(done, 9000);
     request(app)
       .post('/api/v1/users/auth/signin')
@@ -44,7 +44,6 @@ describe('/POST entry', () => {
   });
 
   it('it should add new posts', (done) => {
-    setTimeout(done, 300);
     request(app)
       .post('/api/v1/entries')
       .send(users)
