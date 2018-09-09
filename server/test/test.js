@@ -38,8 +38,8 @@ describe('/POST entry', () => {
         if (err) throw err;
         token = res.body.token;
         done();
+      });
   });
-});
 
   it('it should add new posts', (done) => {
     request(app)
