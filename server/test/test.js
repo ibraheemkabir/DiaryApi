@@ -28,7 +28,7 @@ const users = {
 describe('/POST entry', () => {
   let token;
 
-  beforeEach((done) => {
+  before((done) => {
     setTimeout(done, 9000);
     request(app)
       .post('/api/v1/users/auth/signin')
