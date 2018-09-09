@@ -28,19 +28,11 @@ const users = {
 describe('/POST entry', () => {
   let token;
 
-  before(function (done) {
-    this.timeout(20000);
-    setTimeout(done, 20000);
-    request(app)
+  before(async () => {
+      const res = await chai.request(app)
       .post('/api/v1/users/auth/signin')
-      .send(userCredentials)
-      .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.have.property('token');
-        if (err) throw err;
-        token = res.body.token;
-        done();
-      });
+      .send(userCredentials);
+    token = res.body.token;
   });
 
   it('it should add new posts', (done) => {
