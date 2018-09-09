@@ -29,8 +29,8 @@ describe('/POST entry', () => {
   let token;
 
   before(function (done) {
-    this.timeout(9000);
-    setTimeout(done, 9000);
+    this.timeout(20000);
+    setTimeout(done, 20000);
     request(app)
       .post('/api/v1/users/auth/signin')
       .send(userCredentials)
