@@ -24,13 +24,12 @@ const users = {
   content: 'i saw game of thrones today',
 };
 
-const authenticatedUser = request.agent(app);
-
 
 describe('/POST entry', () => {
   let token;
+
   before((done) => {
-    authenticatedUser
+    request(app)
       .post('/api/v1/users/auth/signin')
       .send(userCredentials)
       .end((err, res) => {
@@ -39,8 +38,8 @@ describe('/POST entry', () => {
         if (err) throw err;
         token = res.body.token;
         done();
-      });
   });
+});
 
   it('it should add new posts', (done) => {
     request(app)
@@ -67,7 +66,7 @@ describe('/POST entry', () => {
       });
   });
 
-  it('it should a particular entry', (done) => {
+   it('it should a particular entry', (done) => {
     const id = 1;
     chai.request(app)
       .get(`/api/v1/entries/${id}`)
@@ -90,7 +89,7 @@ describe('/POST entry', () => {
       });
   });
 
-  it('it should delete an entry', (done) => {
+   it('it should delete an entry', (done) => {
     chai.request(app)
       .delete('/api/v1/entries/1')
       .set('token', `${token}`)
