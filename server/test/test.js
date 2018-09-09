@@ -4,82 +4,96 @@ process.env.NODE_ENV = 'test';
 
 
 const chaiHttp = require('chai-http');
+
 const chai = require('chai');
 
 const expect = chai.expect();
 const should = chai.should();
+
+const request = require('supertest');
+
 chai.use(chaiHttp);
 
+const userCredentials = {
+  username: 'kabir21',
+  password: 'kabir',
+};
+
+const users = {
+  title: 'J.R.R. Tolkien',
+  content: 'i saw game of thrones today',
+};
+
+const authenticatedUser = request.agent(app);
+
+
 describe('/POST entry', () => {
+  let token;
+  before((done) => {
+    authenticatedUser
+      .post('/api/v1/users/auth/signin')
+      .send(userCredentials)
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.have.property('token');
+        if (err) throw err;
+        token = res.body.token;
+        done();
+      });
+  });
+
   it('it should add new posts', (done) => {
-    const users = {
-      title: 'J.R.R. Tolkien',
-      content: 'i saw game of thrones today',
-    };
-    chai.request(app)
-      .post('/api/v1/entry')
+    request(app)
+      .post('/api/v1/entries')
       .send(users)
+      .set('token', `${token}`)
       .end((err, res) => {
         res.should.have.status(200);
         res.body.should.be.a('object');
         done();
       });
   });
-});
 
-
-describe('/POST users', () => {
   it('it should update an entry', (done) => {
     const id = 1;
-    const users = {
-      title: 'corrected title',
-      content: 'i am corrected',
-    };
     chai.request(app)
-      .put(`/api/v1/entry/${id}`)
+      .put(`/api/v1/entries/${id}`)
       .send(users)
+      .set('token', `${token}`)
       .end((err, res) => {
         res.should.have.status(200);
         res.body.should.be.a('object');
         done();
       });
   });
-});
 
-
-// Test the /GET route
-describe('/GET entries', () => {
   it('it should a particular entry', (done) => {
     const id = 1;
     chai.request(app)
-      .get(`/api/v1/entry/${id}`)
+      .get(`/api/v1/entries/${id}`)
+      .set('token', `${token}`)
       .end((err, res) => {
         res.should.have.status(200);
         res.body.should.be.a('object');
         done();
       });
   });
-});
 
-
-// Test the /GET route
-describe('/GET entries', () => {
   it('it should GET all the entries', (done) => {
     chai.request(app)
-      .get('/api/v1/entry')
+      .get('/api/v1/entries')
+      .set('token', `${token}`)
       .end((err, res) => {
         res.should.have.status(200);
         res.body.should.be.a('object');
         done();
       });
   });
-});
 
-// Test the /GET route
-describe('/DELETE entry', () => {
   it('it should delete an entry', (done) => {
     chai.request(app)
-      .delete('/api/v1/entry/1')
+      .delete('/api/v1/entries/1')
+      .set('token', `${token}`)
       .end((err, res) => {
         res.should.have.status(200);
         res.body.should.be.a('object');

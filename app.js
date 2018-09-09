@@ -13,6 +13,7 @@ const user = require('./server/routes/users');
 
 app.use('/', home);
 app.use('/api/v1/entries/', entry);
+
 app.use('/api/v1/users/', user);
 
 

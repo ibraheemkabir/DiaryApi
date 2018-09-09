@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 const secret = 'myydiaryapi';
 
 const authenticate = (req, res, next) => {
-  const { token } = req.headers;
+  const token = req.headers.token;
   const error = {};
   if (!token) {
     error.token = 'No token provided';

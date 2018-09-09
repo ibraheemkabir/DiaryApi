@@ -45,7 +45,7 @@ class Usercontroller {
                 const ids = response.rows[0].id;
                 const token = createtoken(ids);
                 res.status(200)
-                  .header('Authorization', `token ${token}`)
+                  .header('Authorization', `${token}`)
                   .send({
                     success: 'true',
                     message: 'USER logged in',
