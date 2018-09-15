@@ -29,7 +29,7 @@ describe('/POST entry', () => {
   let token;
 
   before(async () => {
-      const res = await chai.request(app)
+    const res = await chai.request(app)
       .post('/api/v1/users/auth/signin')
       .send(userCredentials);
     token = res.body.token;

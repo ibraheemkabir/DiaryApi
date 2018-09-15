@@ -4,7 +4,7 @@ import usercontroller from '../controllers/authentication';
 
 const router = express.Router();
 
-router.post('/auth/signin/', usercontroller.signIn);
+router.post('/auth/signin/', usercontroller.list);
 router.post('/auth/signup/', usercontroller.signUp);
 
 export default router;

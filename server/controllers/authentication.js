@@ -5,7 +5,7 @@ import pool from '../config/dbconfig';
 
 import createtoken from '../helpers/createtoken';
 
-
+import { users } from '../models';
 // const datetime = require('node-datetime');
 
 // const id = 1;
@@ -15,45 +15,39 @@ import createtoken from '../helpers/createtoken';
 const saltRounds = 12;
 
 class Usercontroller {
-  signIn(req, res, next) {
-    const username = req.body.username;
-    const password = req.body.password;
-
+  list(req, res) {
+    const { username } = req.body;
+    const { password } = req.body;
     if (!username || !password) {
       return res.status(400).send({
         success: 'false',
         message: 'username and password is required',
       });
     }
-
-    pool.connect((err, client, done) => {
-      if (err) return done(err);
-      client.query(`SELECT * FROM users WHERE username='${username}'`, (error, response) => {
-        done();
-        if (error) {
-          console.error('query error', error.message, error.stack);
-        } else if (response.rowCount === 0) {
-          res.status(200).send({
-            success: 'false',
-            message: 'user not found',
+    const matchedUser = users.findOne({
+      where: { username: username },
+    })
+      .then(user => {
+        if (!user) {
+          const error = 'User does not exist';
+          return res.status(404).json({
+            message: error,
+            status: 'error',
+            error,
           });
-        } else {
-          bcrypt.compare(password, response.rows[0].password)
+        } else if (user) {
+          bcrypt.compare(password, user.password)
             .then((validPassword) => {
+              const ids = user.id;
+              const token = createtoken(ids);
               if (validPassword) {
-                const result = response.rows;
-                const ids = response.rows[0].id;
-                const token = createtoken(ids);
                 res.status(200)
                   .header('Authorization', `${token}`)
                   .send({
                     success: 'true',
-                    message: 'USER logged in',
-                    result,
-                    auth: true,
+                    message: 'User logged in',
                     token,
                   });
-                next();
               } else {
                 res.status(200).send({
                   success: 'true',
@@ -63,9 +57,6 @@ class Usercontroller {
             });
         }
       });
-      return done();
-    });
-    return res;
   }
 
   signUp(req, res) {
@@ -79,38 +70,35 @@ class Usercontroller {
       });
     }
 
-    pool.connect((err, client, done) => {
-      if (err) return done(err);
-      client.query(`SELECT * FROM users WHERE username='${username}'`, (error, response) => {
-        done();
-        if (error) {
-          console.error('query error', error.message, error.stack);
-        } else if (response.rowCount === 1) {
-          res.status(200).send({
-            success: 'true',
-            message: 'there is an account associated with that username already',
+    const matchedUser = users.findOne({
+      where: { username: username },
+    })
+    .then(user => {
+        if (user) {
+          const error = 'User exists already and signed in';
+          return res.status(422).json({
+            message: error,
+            status: 'error',
           });
-        } else {
-          bcrypt.hash(password, saltRounds)
+        } else if (!user) {
+            bcrypt.hash(password, saltRounds)
             .then((hash) => {
-              console.log(hash);
-              client.query(`INSERT INTO USERS (username,password) VALUES ('${username}','${hash}')`, (error, response) => {
-                if (error) {
-                  console.error('query error', error.message, error.stack);
-                } else {
-                  res.status(200).send({
-                    success: 'true',
-                    message: 'User registered',
-                    response,
-                  });
-                }
-              });
+             const newUser = users.create({username,password: hash})
+            .then(newuser=>{
+              const token = createtoken(newUser.id);
+              let id = newuser.id;
+              return res.status(201)
+              .header('Authorization', `Bearer ${token}`)
+              .send({
+              message: 'User successfully created',
+              newuser,
+              token,
+              status: 'success',
             });
-        }
-      });
-      return done();
-    });
-    return res;
+          });
+      });  
+    }
+  });
   }
 }
 
