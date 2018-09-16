@@ -46,7 +46,7 @@
     "start": "nodemon app.js --exec babel-node --",
     "build": "babel src -d dist",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "test": " nyc mocha --compilers js:babel-core/register server/test/ --exit"
+    "test": " nyc mocha --compilers js:babel-core/register server/test/ -t 5000 --exit"
   },
   "keywords": [],
   "author": "",
