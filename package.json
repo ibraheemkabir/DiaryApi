@@ -8,6 +8,7 @@
     "body-parser": "^1.18.3",
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "express-jwt": "^5.3.1",
     "jsonwebtoken": "^8.3.0",
@@ -45,8 +46,9 @@
   "scripts": {
     "start": "nodemon app.js --exec babel-node --",
     "build": "babel src -d dist",
+    "migrate": " babel-node sequelize db:migrate:undo:all --env test && sequelize db:migrate --env test",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "test": " nyc mocha --compilers js:babel-core/register server/test/ -t 5000 --exit"
+    "test": "nyc mocha --compilers js:babel-core/register server/test/ -t 5000 --exit"
   },
   "keywords": [],
   "author": "",
