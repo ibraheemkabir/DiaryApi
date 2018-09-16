@@ -5,11 +5,5 @@ module.exports = (sequelize, DataTypes) => {
     userid: DataTypes.INTEGER,
     Date: DataTypes.DATE,
   }, {});
-  entries.associate = (models) => {
-    entries.belongsTo(models.users, {
-      foreignKey: 'userid',
-      onDelete: 'CASCADE',
-    });
-  };
   return entries;
 };
