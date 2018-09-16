@@ -1,7 +1,6 @@
 /* eslint-disable class-methods-use-this */
 import bcrypt from 'bcrypt';
 
-import pool from '../config/dbconfig';
 
 import createtoken from '../helpers/createtoken';
 

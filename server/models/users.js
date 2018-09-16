@@ -3,11 +3,5 @@ module.exports = (sequelize, DataTypes) => {
     username: DataTypes.STRING,
     password: DataTypes.STRING,
   }, {});
-  users.associate = (models) => {
-    users.hasMany(models.entries, {
-      foreignKey: 'userid',
-      as: 'entries',
-    });
-  };
   return users;
 };
