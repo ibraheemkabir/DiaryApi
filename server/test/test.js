@@ -15,7 +15,7 @@ const request = require('supertest');
 chai.use(chaiHttp);
 
 const userCredentials = {
-  username: 'testguy35',
+  username: 'testguy34',
   password: 'test',
 };
 
