@@ -24,12 +24,12 @@ class Usercontroller {
       });
     }
     const matchedUser = users.findOne({
-      where: { username: username },
+      where: { username },
     })
       .then(user => {
         if (!user) {
           const error = 'User does not exist';
-          return res.status(404).json({
+          res.status(404).json({
             message: error,
             status: 'error',
             error,
@@ -55,6 +55,7 @@ class Usercontroller {
               }
             });
         }
+        return res;
       });
   }
 
@@ -72,7 +73,7 @@ class Usercontroller {
     const matchedUser = users.findOne({
       where: { username: username },
     })
-    .then(user => {
+      .then(user => {
         if (user) {
           const error = 'User exists already and signed in';
           return res.status(422).json({
@@ -94,10 +95,8 @@ class Usercontroller {
               token,
               status: 'success',
             });
-          });
-      });  
-    }
-  });
+          });});
+        }  });
   }
 }
 
