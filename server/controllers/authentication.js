@@ -5,11 +5,7 @@ import bcrypt from 'bcrypt';
 import createtoken from '../helpers/createtoken';
 
 import { users } from '../models';
-// const datetime = require('node-datetime');
 
-// const id = 1;
-// const dt = datetime.create();
-// const formatted = dt.format('m/d/Y');
 
 const saltRounds = 12;
 

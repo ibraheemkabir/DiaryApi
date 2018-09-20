@@ -30,7 +30,7 @@ describe('/POST entry', () => {
 
   before(async () => {
     const res = await chai.request(app)
-      .post('/api/v1/users/auth/signin')
+      .post('/api/v1/users/auth/signup')
       .send(userCredentials);
     token = res.body.token;
   });
