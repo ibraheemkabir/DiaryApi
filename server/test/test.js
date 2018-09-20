@@ -15,7 +15,7 @@ const request = require('supertest');
 chai.use(chaiHttp);
 
 const userCredentials = {
-  username: 'testguy',
+  username: 'testguy35',
   password: 'test',
 };
 
@@ -27,12 +27,13 @@ const users = {
 
 describe('/POST entry', () => {
   let token;
+  let id;
 
   before(async () => {
     const res = await chai.request(app)
       .post('/api/v1/users/auth/signup')
       .send(userCredentials);
-    token = res.body.token;
+ 		token = res.body.token;
   });
 
   it('it should add new posts', (done) => {
@@ -43,13 +44,13 @@ describe('/POST entry', () => {
       .end((err, res) => {
         res.should.have.status(200);
         res.body.should.be.a('object');
+        id = res.body.id;
         done();
       });
   });
 
   it('it should update an entry', (done) => {
-    const id = 1;
-    chai.request(app)
+      chai.request(app)
       .put(`/api/v1/entries/${id}`)
       .send(users)
       .set('token', `${token}`)
