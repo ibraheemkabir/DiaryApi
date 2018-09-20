@@ -15,7 +15,7 @@ const request = require('supertest');
 chai.use(chaiHttp);
 
 const userCredentials = {
-  username: 'testguy34',
+  username: 'testguy36',
   password: 'test',
 };
 
@@ -62,7 +62,6 @@ describe('/POST entry', () => {
   });
 
    it('it should a particular entry', (done) => {
-    const id = 1;
     chai.request(app)
       .get(`/api/v1/entries/${id}`)
       .set('token', `${token}`)
